@@ -1,12 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid BY Country</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" type="text/css">
+    <title>Covid By Country</title>
+
 </head>
+
 <body>
-   
+
+<!-- Create Header -->
+<header class="title container has-text-centered mt-5" >Covid by Country</header>
+
+<!-- Create search bar -->
+<section class="section">
+
+    <div class="container">
+    <input class="search" type="text" placeholder="Enter Country Name"></input>
+
+    <button class="btn">Search</button>
+    </div>
+        
+</section>
+
+<!-- Creat API display -->
+<section>
+
+    <div>
+        <h1>Country</h1>
+    </div>
+
+    <div>
+        <h1>Total Cases:</h1>
+    </div>
+
+    <div>
+        <h1>Total Deaths:</h1>
+    </div>
+
+    <div>
+        <h1>Total Recovered:</h1>
+    </div>
+
+</section>
+
 </body>
+
+<script src="./assets/js/script.js"></script>
+
 </html>
