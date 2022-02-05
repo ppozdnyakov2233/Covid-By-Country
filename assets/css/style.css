@@ -3,6 +3,11 @@ body{
     padding:0;
 }
 
+.page-container{
+    position: relative;
+    min-height: 100vh;
+}
+
 .title{
     background-color: #FF7F7F;
     color: white;
@@ -34,7 +39,7 @@ body{
 
 footer{
     background-color: #FF7F7F;
-    position: fixed;
+    position: absolute;
     right: 0;bottom:0;left:0;
     padding: 20px 0 20px 0;
     text-align: center;
