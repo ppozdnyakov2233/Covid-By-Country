@@ -39,7 +39,7 @@ body{
 
 footer{
     background-color: #FF7F7F;
-    position:absolute;
+    position:sticky;
     bottom:0;
     text-align: center;
 }
