@@ -21,28 +21,28 @@
 
         <!-- Create search bar -->
         <section class="search">
-            <input class="input is-medium" type="text" placeholder="Enter Country Name"></input>
+            <input class="input is-medium" id="searchBar" type="text" placeholder="Enter Country Name"></input>
             
-            <button class="button is-medium mt-6">Search</button>
+            <button class="button is-medium mt-6" id="btn">Search</button>
         </section>
                 
         <!-- Creat API display -->
         <section class="container">
 
             <div class="has-text-centered country">
-                <h1>Country</h1>
+                <h1 id="country">Country</h1>
             </div>
 
             <div class="data">
-                <h1>Total Cases:</h1>
+                <h1 id="cases">Total Cases:</h1>
             </div>
 
             <div class="data">
-                <h1>Total Deaths:</h1>
+                <h1 id="deaths">Total Deaths:</h1>
             </div>
 
             <div class="data">
-                <h1>Total Recovered:</h1>
+                <h1 id="recovered">Total Recovered:</h1>
             </div>
 
         </section>
@@ -54,6 +54,7 @@
 
 </body>
 
-<script src="./assets/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="./assets/js/javascript.js"></script>
 
 </html>
