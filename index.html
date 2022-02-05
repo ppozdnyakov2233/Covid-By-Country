@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <title>Covid By Country</title>
 
 </head>
@@ -16,43 +16,39 @@
 <body>
 
 <!-- Create Header -->
-<header class="title container has-text-centered mt-5" >Covid by Country</header>
+<header class="title has-text-centered">Covid by Country</header>
 
 <!-- Create search bar -->
-<section class="section">
-
-    <div class="container">
-    <input class="search" type="text" placeholder="Enter Country Name"></input>
-
-    <button class="btn">Search</button>
-    </div>
-        
-</section>
-
-<!-- Creat API display -->
-<section>
-
-    <div>
-
-    </div>
+<section class="search">
+    <input class="input is-medium" type="text" placeholder="Enter Country Name"></input>
     
-    <div>
+    <button class="button is-medium mt-6">Search</button>
+</section>
+        
+<!-- Creat API display -->
+<section class="container">
+
+    <div class="has-text-centered country">
         <h1>Country</h1>
     </div>
 
-    <div>
+    <div class="data">
         <h1>Total Cases:</h1>
     </div>
 
-    <div>
+    <div class="data">
         <h1>Total Deaths:</h1>
     </div>
 
-    <div>
+    <div class="data">
         <h1>Total Recovered:</h1>
     </div>
 
 </section>
+
+<footer>
+    &copy; 2022
+</footer>
 
 </body>
 

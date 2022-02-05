@@ -1,0 +1,55 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.title{
+    background-color: #FF7F7F;
+    color: white;
+    padding: 40px;
+    font-size: 300%;
+}
+
+.search{
+    justify-content: center;
+    text-align: center; 
+}
+
+.data{
+    padding: 20px;
+    border: solid;
+    border-color: #FF7F7F;
+    border-radius: 10px 10px 10px 10px;
+    margin: 50px 0 50px 0;
+}
+
+.data h1{
+    font-size: 180%;
+}
+
+.country{
+    font-size: 5vw;
+    margin-top: 20px;
+}
+
+footer{
+    background-color: #FF7F7F;
+    position: absolute;
+    right: 0;bottom:0;left:0;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .title{
+        font-size: 200%;
+    }
+
+    .country{
+        font-size: 200%;
+    }
+
+    .data{
+        font-size: 80%;
+    }
+}
