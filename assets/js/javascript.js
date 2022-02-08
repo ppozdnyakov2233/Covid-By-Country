@@ -1,5 +1,3 @@
-var country = "United States of America"
-var alert = document.querySelector("#alert");
 var confirmedCases = document.getElementById("cases");
 var totalDeaths = document.getElementById("deaths");
 var totalRecovered = document.getElementById("recovered");
@@ -23,7 +21,8 @@ $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, functio
 });
 
 function getApi(){
-
+    let alert = document.querySelector("#alert");
+    countryFound = false;
     var inputField = document.getElementById("searchBar").value;
 
     var countryName = document.getElementById("country");
@@ -37,7 +36,7 @@ function getApi(){
       };
 
       $.ajax(request).done(function (response) {
-
+        
           for(let i = 0; i < response['Countries'].length; i++){
             if(firstVisit){
               if(response['Countries'][i]["Country"] == countryIpName){
@@ -49,6 +48,7 @@ function getApi(){
                   alert.innerText = "";
                   countryFound = true;
                 }
+
               } else {
 
                 if(response['Countries'][i]["Country"] == country){
