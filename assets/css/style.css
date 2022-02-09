@@ -20,7 +20,7 @@ body{
 }
 
 .background{
-    background-image: url(/earth.jpg);
+    background-image: url('https://elijohnson565.github.io/Covid-By-Country/assets/images/earth.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
