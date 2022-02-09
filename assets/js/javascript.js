@@ -52,9 +52,9 @@ function getApi(){
             if(firstVisit){
               if(response['Countries'][i]["Country"] == countryIpName){
                   countryName.innerText = countryIpName;
-                  confirmedCases.innerText = "Total confirmed cases since 2020: " + response['Countries'][i]["TotalConfirmed"];
-                  totalDeaths.innerText = "Total confirmed deaths since 2020: " + response['Countries'][i]["TotalDeaths"];
-                  totalRecovered.innerText = "Total confirmed global cases since 2020: " + response['Global']['TotalConfirmed'];
+                  confirmedCases.innerText = "Total confirmed cases since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]);
+                  totalDeaths.innerText = "Total confirmed deaths since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalDeaths"]);
+                  totalRecovered.innerText = "Total confirmed global cases since 2020: " + internationalNumberFormat.format(response['Global']['TotalConfirmed']);
                   console.log(response)
                   alert.innerText = "";
                   countryFound = true;
