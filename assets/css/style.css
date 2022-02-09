@@ -53,6 +53,12 @@ footer h1{
     padding-top: 20px;
 }
 
+#last-country{
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 5vw;
+}
+
 @media (max-width: 480px) {
     .title{
         font-size: 200%;

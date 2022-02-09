@@ -2,10 +2,19 @@ var confirmedCases = document.getElementById("cases");
 var totalDeaths = document.getElementById("deaths");
 var totalRecovered = document.getElementById("recovered");
 
+var lastCountryH1 = document.querySelector("#last-country")
 var countryFound = false;
 var countryIpName;
 
 var firstVisit = true;
+
+if (localStorage.getItem("lastCountry") === null) {
+  lastCountry = "";
+  lastCountryH1.innerText = "Last Country Searched: ";
+} else {
+  lastCountry = localStorage.getItem("lastCountry");
+  lastCountryH1.innerText = "Last Country Searched: " + lastCountry;
+}
 
 getApi();
 
@@ -51,15 +60,22 @@ function getApi(){
 
               } else {
 
-                if(response['Countries'][i]["Country"] == country){
-
-                  countryName.innerText = inputField;
-                  confirmedCases.innerText = "Total confirmed cases since 2020: " + response['Countries'][i]["TotalConfirmed"];
-                  totalDeaths.innerText = "Total confirmed deaths since 2020: " + response['Countries'][i]["TotalDeaths"];
-                  totalRecovered.innerText = "Total confirmed global cases since 2020: " + response['Global']['TotalConfirmed'];
-                  console.log(response)
-                  alert.innerText = "";
-                  countryFound = true;
+                  if(response['Countries'][i]["Country"] == country){
+                
+                    lastCountry = response['Countries'][i]["Country"];
+                    localStorage.clear();
+                    localStorage.setItem("lastCountry", response['Countries'][i]["Country"]);
+                    lastCountryH1.innerText = "Last Country Searched: " + lastCountry;
+                    
+                    console.log(response['Countries'][i]["Country"])
+                                        
+                    countryName.innerText = inputField;
+                    confirmedCases.innerText = "Total confirmed cases since 2020: " + response['Countries'][i]["TotalConfirmed"];
+                    totalDeaths.innerText = "Total confirmed deaths since 2020: " + response['Countries'][i]["TotalDeaths"];
+                    totalRecovered.innerText = "Total confirmed global cases since 2020: " + response['Global']['TotalConfirmed'];
+                    console.log(response)
+                    alert.innerText = "";
+                    countryFound = true;
 
                 }
 
@@ -72,7 +88,7 @@ function getApi(){
             alert.innerText = "Country not found in the database";
           }
 
-          console.log(inputField)
+          console.log(lastCountry);
       });
 }
 
