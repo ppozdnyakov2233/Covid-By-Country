@@ -8,6 +8,8 @@ var countryIpName;
 
 var firstVisit = true;
 
+var internationalNumberFormat = new Intl.NumberFormat('en-US');
+
 if (localStorage.getItem("lastCountry") === null) {
   lastCountry = "";
   lastCountryH1.innerText = "Last Country Searched: ";
@@ -26,7 +28,7 @@ $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, functio
   } else{
     countryIpName = data['country'];
   }
-  console.log(countryIpName);
+
 });
 
 function getApi(){
@@ -67,13 +69,13 @@ function getApi(){
                     localStorage.setItem("lastCountry", response['Countries'][i]["Country"]);
                     lastCountryH1.innerText = "Last Country Searched: " + lastCountry;
                     
-                    console.log(response['Countries'][i]["Country"])
-                                        
+                    console.log(internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]))
+                                          
                     countryName.innerText = inputField;
-                    confirmedCases.innerText = "Total confirmed cases since 2020: " + response['Countries'][i]["TotalConfirmed"];
-                    totalDeaths.innerText = "Total confirmed deaths since 2020: " + response['Countries'][i]["TotalDeaths"];
-                    totalRecovered.innerText = "Total confirmed global cases since 2020: " + response['Global']['TotalConfirmed'];
-                    console.log(response)
+                    confirmedCases.innerText = "Total confirmed cases since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]);
+                    totalDeaths.innerText = "Total confirmed deaths since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalDeaths"]);
+                    totalRecovered.innerText = "Total confirmed global cases since 2020: " + internationalNumberFormat.format(response['Global']['TotalConfirmed']);
+                  
                     alert.innerText = "";
                     countryFound = true;
 
