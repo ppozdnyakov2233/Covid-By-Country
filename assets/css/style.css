@@ -20,7 +20,7 @@ body{
 }
 
 .background{
-    background-image: url(./assets/images/earth.jpg);
+    background-image: url(/earth.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
