@@ -1,13 +1,12 @@
-var confirmedCases = document.getElementById("cases");
-var totalDeaths = document.getElementById("deaths");
-var totalRecovered = document.getElementById("recovered");
-
+var confirmedCases = document.querySelector("#cases");
+var totalDeaths = document.querySelector("#deaths");
+var totalRecovered = document.querySelector("#recovered");
 var lastCountryH1 = document.querySelector("#last-country")
+
 var countryFound = false;
 var countryIpName;
 
 var firstVisit = true;
-
 var internationalNumberFormat = new Intl.NumberFormat('en-US');
 
 if (localStorage.getItem("lastCountry") === null) {
@@ -31,12 +30,14 @@ $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, functio
 
 });
 
+
 function getApi(){
+
     let alert = document.querySelector("#alert");
     countryFound = false;
-    var inputField = document.getElementById("searchBar").value;
+    var inputField = document.querySelector("#searchBar").value;
 
-    var countryName = document.getElementById("country");
+    var countryName = document.querySelector("#country");
 
     country = inputField;
     
@@ -55,7 +56,6 @@ function getApi(){
                   confirmedCases.innerText = "Total confirmed cases since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]);
                   totalDeaths.innerText = "Total confirmed deaths since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalDeaths"]);
                   totalRecovered.innerText = "Total confirmed global cases since 2020: " + internationalNumberFormat.format(response['Global']['TotalConfirmed']);
-                  console.log(response)
                   alert.innerText = "";
                   countryFound = true;
                 }
@@ -67,10 +67,7 @@ function getApi(){
                     lastCountry = response['Countries'][i]["Country"];
                     localStorage.clear();
                     localStorage.setItem("lastCountry", response['Countries'][i]["Country"]);
-                    lastCountryH1.innerText = "Last Country Searched: " + lastCountry;
-                    
-                    console.log(internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]))
-                                          
+                    lastCountryH1.innerText = "Last Country Searched: " + lastCountry;                                      
                     countryName.innerText = inputField;
                     confirmedCases.innerText = "Total confirmed cases since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalConfirmed"]);
                     totalDeaths.innerText = "Total confirmed deaths since 2020: " + internationalNumberFormat.format(response['Countries'][i]["TotalDeaths"]);
@@ -86,17 +83,13 @@ function getApi(){
           }
 
           if(!countryFound){
-            console.log("Please enter a real country name, thanks")
             alert.innerText = "Country not found in the database";
           }
-
-          console.log(lastCountry);
       });
 }
 
 
 $("#btn").on("click", function(){
-    console.log("clicked")
     firstVisit = false;
     getApi();
 });
