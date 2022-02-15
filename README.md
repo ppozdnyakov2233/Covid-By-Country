@@ -12,8 +12,8 @@ You can search by country and get all the data about cases, deaths, and recovery
 * Bulma CSS
 
 ## Website
-https://elijohnson565.github.io/Covid-By-Country/ </br>
-
+https://ppozdnyakov2233.github.io/Covid-By-Country/ </br>
+https://github.com/ppozdnyakov2233/Covid-By-Country
 
 
 
